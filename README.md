@@ -3,7 +3,7 @@ FreeCodeCamp challenge to build a web app that gives the weather based on the lo
 
 ## Show the Local Weather
 
-Objective: Build a CodePen.io app that is functionally similar to (this).[http://codepen.io/FreeCodeCamp/full/bELRjV.]
+Objective: Build a CodePen.io app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/bELRjV.
 
 **Rule #1**: Don't look at the example project's code. Figure it out for yourself.
 

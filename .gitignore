@@ -1,4 +1,2 @@
 .DS_Store
-app/
-gulpfile.babel.js
-.babelrc
+node_modules/
