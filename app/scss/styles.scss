@@ -1,1 +1,48 @@
 @import 'normalize';
+
+body {
+  background: url('../images/weather.png') repeat;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 72px;
+  color: #355198;
+}
+
+.weather-wrapper {
+  font-family: 'Varela Round', sans-serif;
+  color: #fff;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 495.43px;
+  background: #355198;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.weather-conditions {
+  .weather-description {
+    font-size: 48px;
+    text-align: center;
+  }
+}
+
+.temp-location {
+  .location {
+    font-size: 24px;
+  }
+
+  .temp {
+    font-size: 144px;
+    margin: 25px 0;
+  }
+}

@@ -435,3 +435,60 @@ template {
 [hidden] {
   display: none;
 }
+
+body {
+  background: url("../images/weather.png") repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-size: 72px;
+  color: #355198;
+}
+
+.weather-wrapper {
+  font-family: 'Varela Round', sans-serif;
+  color: #fff;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  max-height: 495.43px;
+  background: #355198;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.weather-conditions .weather-description {
+  font-size: 48px;
+  text-align: center;
+}
+
+.temp-location .location {
+  font-size: 24px;
+}
+
+.temp-location .temp {
+  font-size: 144px;
+  margin: 25px 0;
+}
