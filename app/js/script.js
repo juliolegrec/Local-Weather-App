@@ -2,7 +2,7 @@ var currentLatitude,
 		currentLongitude,
 		KelvinTemp;
 
-var a = 3;
+var timeNow = Math.floor((new Date()).getTime() / 1000);
 
 var myRequest = new XMLHttpRequest();
 
@@ -16,8 +16,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 function makeRequest() {
 	var method = "GET",
-			// url = `http://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&APPID=5e54985f3712fd90887ced9539d73345`;
-			url = `http://api.openweathermap.org/data/2.5/weather?lat=43&lon=5&APPID=5e54985f3712fd90887ced9539d73345`;
+			url = `http://api.openweathermap.org/data/2.5/weather?lat=${currentLatitude}&lon=${currentLongitude}&APPID=5e54985f3712fd90887ced9539d73345`;
+			// url = `http://api.openweathermap.org/data/2.5/weather?lat=43&lon=5&APPID=5e54985f3712fd90887ced9539d73345`;
 	myRequest.open(method, url, true);
 	myRequest.onreadystatechange = displayInfo;
 	myRequest.send();
@@ -35,25 +35,20 @@ function displayInfo() {
 		// Change weather icon...
 		var mainWeather = myResponseText.weather[0].main,
 				weatherIcon = document.querySelector('.weather-icon');
-			if (mainWeather === "Clear Sky") {
-				weatherIcon.src = "images/clear.svg";
+			if (mainWeather === "Clear") {
+				if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
+					weatherIcon.src = "images/sunny.svg";
+				} else {
+					weatherIcon.src = "images/clear.svg";
+				}
 			} else if (mainWeather === "Rain") {
-				weatherIcon.src = "images/ModRainSwrsDay.svg";
+				if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
+					weatherIcon.src = "images/ModRainSwrsDay.svg";
+				} else {
+					weatherIcon.src = "images/ModRainSwrsNight.svg";
+				}
 			} else {
 				console.log("something's not working");
 			}
 	}
 }
-
-// function getIconUrl() {
-// 	var iconUrl;
-
-// 	if (myResponseText.weather[0].main === "clear sky") {
-// 		iconUrl = "images/clear.svg";
-// 	} else if (myResponseText.weather[0].main === "Rain") {
-// 		iconUrl = "images/ModRainSwrsDay.svg";
-// 	} else {
-// 		console.log("something's not working");
-// 	}
-// 	return iconUrl;
-// }
