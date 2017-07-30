@@ -1,24 +1,23 @@
-// Script to test Geoloation; Got the current location in the end.
-
-var x = document.querySelector('.demo');
-var btn = document.querySelector('.getLocationBtn');
-
-x.innerHTML = "It works!";
+// Getting location from current position
+var currentLongitude,
+		currentLatitude;
 
 function getLocation() {
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition);
+		navigator.geolocation.getCurrentPosition((position) => {
+				return position;
+		});
 	} else {
-		x.innerHTML = "Geolocation is not supported by this browser.";
+		console.log("Not supported");		
 	}
+
+	currentLongitude = position.coords.longitude;
+	currentLatitude = position.coords.latitude;
+
+	return [currentLongitude, currentLatitude];
+
 }
 
-function showPosition(position) {
-	x.innerHTML = "Latitude: " + position.coords.latitude + 
-	"<br>Longitude: " + position.coords.longitude; 
-}
+var currentPosition = getLocation();
 
-btn.addEventListener('click', function(){
-	getLocation();
-})
-
+console.log(currentPosition);

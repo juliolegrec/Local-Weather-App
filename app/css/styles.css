@@ -458,6 +458,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 72px;
   color: #355198;
+  margin-top: 0;
 }
 
 .weather-wrapper {
@@ -477,6 +478,8 @@ body {
   align-items: center;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .weather-conditions .weather-description {
