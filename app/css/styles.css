@@ -485,6 +485,7 @@ body {
 .weather-conditions .weather-description {
   font-size: 48px;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .temp-location .location {
