@@ -47,6 +47,8 @@ function displayInfo() {
 		let temperature = myResponseText.main.temp;
 
 		tempDisplay.innerHTML = `${temperature}&deg;C`;
+
+
 		locationDisplay.innerHTML = `Location: ${myResponseText.name}, ${myResponseText.sys.country}`;
 		weatherDesc.innerHTML = myResponseText.weather[0].description;
 
@@ -56,27 +58,27 @@ function displayInfo() {
 
 		if (mainWeather === "Clear") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/sunny.svg";
+				weatherIcon.src = "images/src/sunny.svg";
 			} else {
-				weatherIcon.src = "images/clear.svg";
+				weatherIcon.src = "images/src/clear.svg";
 			}
 		} else if (mainWeather === "Rain") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/ModRainSwrsDay.svg";
+				weatherIcon.src = "images/src/ModRainSwrsDay.svg";
 			} else {
-				weatherIcon.src = "images/ModRainSwrsNight.svg";
+				weatherIcon.src = "images/src/ModRainSwrsNight.svg";
 			}
 		}	else if (mainWeather === "Thunderstorm") { 
-			weatherIcon.src = "images/CloudRainThunder.svg";
+			weatherIcon.src = "images/src/CloudRainThunder.svg";
 		}	else if (mainWeather === "Snow") {
-			weatherIcon.src = "images/ModSnow.svg";
+			weatherIcon.src = "images/src/ModSnow.svg";
 		}	else if (mainWeather === "Atmosphere") {
-			weatherIcon.src = "images/Mist.svg";
+			weatherIcon.src = "images/src/Mist.svg";
 		}	else if (mainWeather === "Clouds") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/PartlyCloudyDay .svg";
+				weatherIcon.src = "images/src/PartlyCloudyDay.svg";
 			} else {
-				weatherIcon.src = "images/PartlyCloudyNight.svg";
+				weatherIcon.src = "images/src/PartlyCloudyNight.svg";
 			}
 		} else {
 				console.log("No Icon");
