@@ -22,5 +22,4 @@
 | Snow                   | ModSnow                             |
 | Atmosphere             | Mist                                |
 | Clear                  | Sunny / Clear                       |
-| Clouds (id = 801 )     | PartlyCloudyDay / PartlyCloudyNight |
-
+| Clouds                 | PartlyCloudyDay / PartlyCloudyNight |

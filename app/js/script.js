@@ -5,12 +5,6 @@ const timeNow = Math.floor((new Date()).getTime() / 1000);
 
 let myRequest = new XMLHttpRequest();
 
-// navigator.geolocation.getCurrentPosition(function(position) {
-// 	currentLatitude = position.coords.latitude;
-// 	currentLongitude = position.coords.longitude;
-//   makeRequest(); 
-// });
-
 navigator.geolocation.getCurrentPosition(success, error, options);
 
 function success(position) {
@@ -23,12 +17,11 @@ function error(err) {
 	console.warn(`ERROR(${err.code}): ${err.message}`);
 }
 
-let options = {
+var options = {
 	enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 0
 }
-
 
 function makeRequest() {
 	let method = "GET",
