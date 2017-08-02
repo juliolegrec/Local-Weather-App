@@ -2,15 +2,34 @@ var currentLatitude,
 		currentLongitude,
 		KelvinTemp;
 
-var timeNow = Math.floor((new Date()).getTime() / 1000);
+const timeNow = Math.floor((new Date()).getTime() / 1000);
 
 var myRequest = new XMLHttpRequest();
 
-navigator.geolocation.getCurrentPosition(function(position) {
-   currentLatitude = position.coords.latitude;
-	 currentLongitude = position.coords.longitude;
-   makeRequest(); 
-});
+// navigator.geolocation.getCurrentPosition(function(position) {
+// 	currentLatitude = position.coords.latitude;
+// 	currentLongitude = position.coords.longitude;
+//   makeRequest(); 
+// });
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+function success(position) {
+	currentLatitude = position.coords.latitude;
+	currentLongitude = position.coords.longitude;
+  makeRequest(); 
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+var options = {
+	enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+}
+
 
 function makeRequest() {
 	var method = "GET",
@@ -22,17 +41,26 @@ function makeRequest() {
 }
 
 function displayInfo() {
+	var tempDisplay = document.querySelector('.temp'),
+			locationDisplay = document.querySelector('.location'),
+			weatherDesc = document.querySelector('.weather-description');
+
+
 	if (myRequest.readyState === XMLHttpRequest.DONE && myRequest.status === 200) {
 		var myResponseText = JSON.parse(myRequest.responseText);
+
 		console.log(myResponseText);
+
 		KelvinTemp = myResponseText.main.temp;
-		document.querySelector('.temp').innerHTML = `${Math.round(KelvinTemp - 273.15)}&deg;C`;
-		document.querySelector('.location').innerHTML = `Location: ${myResponseText.name}, ${myResponseText.sys.country}`;
-		document.querySelector('.weather-description').innerHTML = myResponseText.weather[0].description;
+
+		tempDisplay.innerHTML = `${Math.round(KelvinTemp - 273.15)}&deg;C`;
+		locationDisplay.innerHTML = `Location: ${myResponseText.name}, ${myResponseText.sys.country}`;
+		weatherDesc.innerHTML = myResponseText.weather[0].description;
 
 		// Change weather icon...
 		var mainWeather = myResponseText.weather[0].main,
 				weatherIcon = document.querySelector('.weather-icon');
+
 			if (mainWeather === "Clear") {
 				if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
 					weatherIcon.src = "images/sunny.svg";
