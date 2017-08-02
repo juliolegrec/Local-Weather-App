@@ -9,3 +9,18 @@
 | thunderstorm     | CloudRainThunder                    |
 | snow             | ModSnow                             |
 | mist             | Mist                                |
+
+
+
+## Main Weather Conditions
+
+| Main Weather Condition | Icons name                          |
+| ---------------------- | ----------------------------------- |
+| Thunderstorm           | CloudRainThunder                    |
+| Drizzle                |                                     |
+| Rain                   | ModRainSwrsDay / ModRainSwrsNight   |
+| Snow                   | ModSnow                             |
+| Atmosphere             | Mist                                |
+| Clear                  | Sunny / Clear                       |
+| Clouds (id = 801 )     | PartlyCloudyDay / PartlyCloudyNight |
+
