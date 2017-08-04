@@ -46,8 +46,15 @@ function displayInfo() {
 
 		let temperature = myResponseText.main.temp;
 
-		tempDisplay.innerHTML = `${temperature}&deg;C`;
+		tempDisplay.innerHTML = `${Math.round(temperature)}&deg;C`;
 
+		document.querySelector('.fahrenheit').addEventListener('click', () => {
+			tempDisplay.innerHTML = `${Math.round(((9 *temperature)/5)+32)}&deg;F`;
+		})
+
+		document.querySelector('.celsius').addEventListener('click', () => {
+			tempDisplay.innerHTML = `${Math.round(temperature)}&deg;C`;
+		})
 
 		locationDisplay.innerHTML = `Location: ${myResponseText.name}, ${myResponseText.sys.country}`;
 		weatherDesc.innerHTML = myResponseText.weather[0].description;

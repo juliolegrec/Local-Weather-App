@@ -490,16 +490,8 @@ body {
   font-size: 150%;
 }
 
-.weather-wrapper .temperatureUnit input[type="radio"]:checked:before {
-  content: "";
-  display: block;
-  position: relative;
-  top: 3px;
-  left: 3px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #0BA94E;
+.weather-conditions .weather-icon {
+  text-align: center;
 }
 
 .weather-conditions .weather-description {
