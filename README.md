@@ -8,3 +8,9 @@ FreeCodeCamp challenge to build a web app that gives the weather based on the lo
 - [x] **User Story**: I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
 
 - [x] **User Story**: I can push a button to toggle between Fahrenheit and Celsius.
+
+## To Dos
+
+- [ ] Animate SVG icons.
+- [ ] Mobile friendly.
+- [ ] Clean the code.
