@@ -65,27 +65,27 @@ function displayInfo() {
 
 		if (mainWeather === "Clear") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/src/sunny.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/3wj9udc7ec0p88o/Sunny.svg?dl=1";
 			} else {
-				weatherIcon.src = "images/src/clear.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/ewwoa0h4htlc9qj/Clear.svg?dl=1";
 			}
 		} else if (mainWeather === "Rain") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/src/ModRainSwrsDay.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/e4s1o92z3fbjafz/ModRainSwrsDay.svg?dl=1";
 			} else {
-				weatherIcon.src = "images/src/ModRainSwrsNight.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/za8xjzyvrn33ay1/ModRainSwrsNight.svg?dl=1";
 			}
 		}	else if (mainWeather === "Thunderstorm") { 
-			weatherIcon.src = "images/src/CloudRainThunder.svg";
+			weatherIcon.src = "https://www.dropbox.com/s/ky3xfhtlvg3g50v/CloudRainThunder.svg?dl=1";
 		}	else if (mainWeather === "Snow") {
-			weatherIcon.src = "images/src/ModSnow.svg";
+			weatherIcon.src = "https://www.dropbox.com/s/jfq2bdnot2c9h5h/ModSnow.svg?dl=1";
 		}	else if (mainWeather === "Atmosphere") {
-			weatherIcon.src = "images/src/Mist.svg";
+			weatherIcon.src = "https://www.dropbox.com/s/zovbvo8njzoghes/Mist.svg?dl=1";
 		}	else if (mainWeather === "Clouds") {
 			if (timeNow >= myResponseText.sys.sunrise && timeNow <= myResponseText.sys.sunset) {
-				weatherIcon.src = "images/src/PartlyCloudyDay.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/slbxm2rcwn7qc8x/PartlyCloudyDay.svg?dl=1";
 			} else {
-				weatherIcon.src = "images/src/PartlyCloudyNight.svg";
+				weatherIcon.src = "https://www.dropbox.com/s/gsu177zpqprdkun/PartlyCloudyNight.svg?dl=1";
 			}
 		} else {
 				console.log("No Icon");
